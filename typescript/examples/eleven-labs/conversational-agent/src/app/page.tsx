@@ -1,5 +1,7 @@
-import { AnimatedImage } from "./components/AnimatedImage";
-import { Conversation } from "./components/conversation";
+"use client";
+
+import { AnimatedImage } from './components/AnimatedImage';
+import { Conversation } from './components/conversation';
 
 export default function Home() {
     return (
