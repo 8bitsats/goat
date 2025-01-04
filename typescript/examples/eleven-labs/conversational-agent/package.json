@@ -6,7 +6,8 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint"
+        "lint": "next lint",
+        "postinstall": "pnpm build"
     },
     "dependencies": {
         "@11labs/react": "^0.0.4",
@@ -15,25 +16,27 @@
         "@dynamic-labs/solana": "4.0.0-alpha.45",
         "@dynamic-labs/solana-core": "3.9.2",
         "@dynamic-labs/wagmi-connector": "4.0.0-alpha.45",
-        "@goat-sdk/adapter-eleven-labs": "workspace:*",
-        "@goat-sdk/core": "workspace:*",
-        "@goat-sdk/plugin-coingecko": "workspace:*",
-        "@goat-sdk/plugin-jupiter": "workspace:*",
-        "@goat-sdk/wallet-evm": "workspace:*",
-        "@goat-sdk/wallet-solana": "workspace:*",
-        "@goat-sdk/wallet-viem": "workspace:*",
+        "@goat-sdk/adapter-eleven-labs": "^0.2.5",
+        "@goat-sdk/core": "^0.4.4",
+        "@goat-sdk/plugin-coingecko": "^0.2.4",
+        "@goat-sdk/wallet-solana": "^0.2.5",
+        "@solana/web3.js": "^1.95.8",
         "@tanstack/react-query": "^5.62.2",
+        "fastestsmallesttextencoderdecoder": "^1.0.22",
         "next": "15.0.3",
         "pino-pretty": "13.0.0",
-        "react": "^18.0.0",
-        "react-dom": "^18.0.0",
-        "viem": "catalog:",
-        "wagmi": "^2.13.3"
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "viem": "^2.7.8"
     },
     "devDependencies": {
+        "@netlify/plugin-nextjs": "^4.41.3",
         "@types/react": "^18",
         "@types/react-dom": "^18",
         "postcss": "^8",
         "tailwindcss": "^3.4.1"
+    },
+    "engines": {
+        "node": ">=20.12.2 <23"
     }
 }

@@ -10,12 +10,11 @@ import {
 } from "@dynamic-labs/sdk-react-core";
 import { isSolanaWallet } from "@dynamic-labs/solana";
 import { getOnChainTools } from "@goat-sdk/adapter-eleven-labs";
-import { coingecko } from "@goat-sdk/plugin-coingecko";
 
+import type { TrendingToken } from "../utils";
 import {
     createSolanaWalletFromDynamic,
     getTrendingTokens,
-    TrendingToken,
 } from "../utils";
 
 export function Conversation() {
@@ -69,9 +68,7 @@ export function Conversation() {
 
             const tools = await getOnChainTools({
                 wallet: createSolanaWalletFromDynamic(connection, signer),
-                plugins: [
-                    coingecko({ apiKey: process.env.NEXT_PUBLIC_COINGECKO_API_KEY ?? "" })
-                ],
+                plugins: [],
                 options: {
                     logTools: true
                 }

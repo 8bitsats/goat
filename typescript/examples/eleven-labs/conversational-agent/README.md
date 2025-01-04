@@ -1,47 +1,66 @@
-# Eleven Labs Conversational Agent Example
+# Conversational Agent with Solana Integration
 
-This example builds a conversational agent with ElevenLabs that can read your wallet address, query the balance in your wallet, and recommend tokens to buy, based on the trending tokens of the day.
+A Next.js application that integrates with Eleven Labs for voice conversations and provides Solana token tracking capabilities.
 
-This example uses the ElevenLabs base project described [here](https://elevenlabs.io/docs/conversational-ai/guides/conversational-ai-guide-nextjs) and implements both functionalities using tool calling described [here](https://elevenlabs.io/docs/conversational-ai/customization/client-tools).
+## Features
 
-**Note**: An [issue](https://github.com/goat-sdk/goat/issues/39) to support Solana wallets / balance has been opened.
+- Voice conversations using Eleven Labs
+- Solana wallet integration
+- Real-time token price tracking using Bird Eye API
+- Trending Solana tokens information
 
-https://github.com/user-attachments/assets/81a3837e-ad05-4e29-b6c7-0a14318f7b8e
+## Environment Variables
 
-## Setup
+The following environment variables are required:
 
-1. Copy the `.example.env` and populate with your values.
-
+```env
+NEXT_PUBLIC_ELEVEN_LABS_AGENT_ID=your_eleven_labs_agent_id
+NEXT_PUBLIC_COINGECKO_API_KEY=your_coingecko_api_key
+NEXT_PUBLIC_BIRDEYE_API_KEY=your_birdeye_api_key
 ```
-cp .example.env .env
+
+## Development
+
+1. Install dependencies:
+```bash
+pnpm install
 ```
-`NEXT_PUBLIC_ELEVEN_LABS_AGENT_ID` - create an agent [here](https://elevenlabs.io/app/conversational-ai), and copy agent ID
 
-`NEXT_PUBLIC_SEPOLIA_RPC_URL` - create your first app on [Alchemy](https://dashboard.alchemy.com/apps), and go to the Networks tab to copy Ethereum Sepolia API key
+2. Create a `.env` file with the required environment variables
 
-`NEXT_PUBLIC_COINGECKO_API_KEY` - create your demo account API key on the Coingecko developer [dashboard](https://www.coingecko.com/en/developers/dashboard)
-
-2. Run `pnpm i && build` on the /typescript directory. Then, run `pnpm dev` in the /eleven-labs/conversational-agent directory. When the app loads, open the console to complete the next step.
-
-3. ElevenLabs requires you to register each tool manually through the ElevenLabs dashboard. To make it easier, we've added a `logTools` option to the `getOnChainTools` function. This will log the tools with their respective descriptions and parameters to the console.
-
-```typescript
-const tools = await getOnChainTools({
-    wallet: viem(wallet),
-    options: {
-        logTools: true,
-    },
-});
+3. Run the development server:
+```bash
+pnpm dev
 ```
-When you load the site, the console logs each tool that is called, which you would need to add into your agent's dashboard as a `client tool`. The logs will look something like this:
 
-```
-get_eth_balance
-Description: This tool returns the ETH balance of an EVM wallet.
-Parameters:
-- address (optional) (string): The address to get the balance of, defaults to the address of the wallet
-```
-Add it in the Eleven Labs Agent console like so:
-<img width="596" alt="Screenshot 2024-12-09 at 6 03 51 PM" src="https://github.com/user-attachments/assets/7ea1a9f0-fc45-4f5b-921c-502d89734cfd">
+## Deployment to Netlify
 
-4. Finally, run the app with `pnpm dev`, connect your wallet, and start the conversation!
+1. Push your code to a GitHub repository
+
+2. In Netlify:
+   - Create a new site from Git
+   - Connect to your GitHub repository
+   - Set build command: `pnpm build`
+   - Set publish directory: `.next`
+   - Add environment variables in site settings
+
+3. Required build settings:
+   - Node version: 20.x
+   - Package manager: pnpm
+
+4. Environment variables to configure in Netlify:
+   - NEXT_PUBLIC_ELEVEN_LABS_AGENT_ID
+   - NEXT_PUBLIC_COINGECKO_API_KEY
+   - NEXT_PUBLIC_BIRDEYE_API_KEY
+
+## Usage
+
+1. Connect your Solana wallet
+2. Click "Start Conversation"
+3. Allow microphone access when prompted
+4. Start talking with the AI agent
+5. Ask about trending Solana tokens
+
+## License
+
+MIT

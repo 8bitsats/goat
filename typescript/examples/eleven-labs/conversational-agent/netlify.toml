@@ -1,0 +1,24 @@
+[build]
+  command = "NODE_VERSION=20.12.2 pnpm install && NODE_VERSION=20.12.2 pnpm build"
+  publish = ".next"
+
+[build.environment]
+  NEXT_TELEMETRY_DISABLED = "1"
+  NODE_VERSION = "20.12.2"
+  NPM_FLAGS = "--version"
+  PNPM_FLAGS = "--shamefully-hoist --no-frozen-lockfile"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[functions]
+  node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[dev]
+  framework = "next"
+  targetPort = 3000

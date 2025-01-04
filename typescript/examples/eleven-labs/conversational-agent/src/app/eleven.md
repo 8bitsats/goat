@@ -20,12 +20,12 @@ playElevenLabsAudio: async (parameters) => {
 
   try {
     // 1. Prepare the request to Eleven Labs API
-    const elevenLabsUrl = `https://api.elevenlabs.io/v1/text-to-speech/${voiceId || "EXAMPLE_VOICE_ID"}`;
+    const elevenLabsUrl = `https://api.elevenlabs.io/v1/text-to-speech/${voiceId || "lwiJrJFJXhXCJTiYfQxV"}`;
     const response = await fetch(elevenLabsUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'xi-api-key': apiKey || 'YOUR_ELEVEN_LABS_API_KEY',
+        'xi-api-key': apiKey || 'sk_40d84164b08a7568a1f2bb36a4c7dd9bdc04bbfefc71cf7a',
       },
       body: JSON.stringify({
         text: text,
@@ -128,12 +128,12 @@ const conversation = await Conversation.startSession({
       const { text, voiceId, apiKey } = parameters;
       
       try {
-        const elevenLabsUrl = `https://api.elevenlabs.io/v1/text-to-speech/${voiceId || "EXAMPLE_VOICE_ID"}`;
+        const elevenLabsUrl = `https://api.elevenlabs.io/v1/text-to-speech/${voiceId || "lwiJrJFJXhXCJTiYfQxV"}`;
         const response = await fetch(elevenLabsUrl, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'xi-api-key': apiKey || 'YOUR_ELEVEN_LABS_API_KEY',
+            'xi-api-key': apiKey || 'sk_40d84164b08a7568a1f2bb36a4c7dd9bdc04bbfefc71cf7a',
           },
           body: JSON.stringify({
             text: text,
