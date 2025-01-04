@@ -55,8 +55,16 @@
             "path": "./typescript/packages/plugins/allora"
         },
         {
+            "name": "[Plugin] 🦅 birdeye",
+            "path": "./typescript/packages/plugins/birdeye"
+        },
+        {
             "name": "[Plugin] 💰 coingecko",
             "path": "./typescript/packages/plugins/coingecko"
+        },
+        {
+            "name": "[Plugin] 🧢 coinmarketcap",
+            "path": "./typescript/packages/plugins/coinmarketcap"
         },
         {
             "name": "[Plugin] 📡 farcaster",
@@ -91,6 +99,10 @@
             "path": "./typescript/packages/plugins/meteora"
         },
         {
+            "name": "[Plugin] 📈 nansen",
+            "path": "./typescript/packages/plugins/nansen"
+        },
+        {
             "name": "[Plugin] 🪙 spl token",
             "path": "./typescript/packages/plugins/spl-token"
         },
@@ -109,6 +121,10 @@
         {
             "name": "[Plugin] 🗿 ironclad",
             "path": "./typescript/packages/plugins/ironclad"
+        },
+        {
+            "name": "[Plugin] 🐎 1inch",
+            "path": "./typescript/packages/plugins/1inch"
         },
         {
             "name": "[Plugin] 🦄 uniswap",
@@ -142,6 +158,10 @@
         {
             "name": "[Wallet] 🌞 solana",
             "path": "./typescript/packages/wallets/solana"
+        },
+        {
+            "name": "[Wallet] 💧 sui",
+            "path": "./typescript/packages/wallets/sui"
         },
         {
             "name": "[Wallet] 🪨 evm",
